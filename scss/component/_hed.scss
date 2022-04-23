@@ -1,0 +1,94 @@
+@use '../component/responsive'as r;
+
+
+.section {
+
+     &__hed-container {
+          display: flex;
+          align-items: baseline;
+     }
+
+     &__hed {
+          font-size: 3rem;
+          font-weight: bold;
+          font-family: 'Lato', sans-serif;
+
+     }
+
+     &__hed-position {
+          justify-content: center;
+     }
+
+     &__sub-hed {
+          display: inline-block;
+          font-size: 1.5rem;
+          font-weight: 500;
+          line-height: 1;
+          color: #4b6cb7;
+
+          &::before {
+               margin-left: 8px;
+               margin-right: 7px;
+               content: url('img/Line 6.svg');
+          }
+     }
+
+}
+
+@include r.pc {
+     .section {
+          &__hed {
+               font-size: 4.6875vw;
+
+          }
+
+          &__sub-hed {
+               font-size: 2.34375vw;
+          }
+
+     }
+}
+
+@include r.tab {
+     .section {
+          &__hed-container {
+               margin-top: 2.5rem;
+          }
+
+          &__hed {
+               font-size: 6.25vw;
+
+          }
+
+
+          &__sub-hed {
+               font-size: 3.125vw;
+
+               &::before {
+                    content: url('img/Line 6-sp.svg');
+               }
+          }
+     }
+}
+
+@include r.sp {
+     .section {
+
+
+          &__hed {
+               font-size: 2rem;
+
+          }
+
+          &__hed-position {
+               justify-content: flex-start;
+          }
+
+          &__sub-hed {
+               font-size: 1.25rem;
+
+          }
+
+     }
+
+}

@@ -1,0 +1,27 @@
+html {
+     line-height: 1;
+     font-size: 16px;
+}
+
+body {
+     text-transform: uppercase;
+     font-family: 'Noto Sans JP', sans-serif;
+     color: #191919;
+}
+
+.wrap {
+     overflow: hidden;
+}
+
+.top-bg-color {
+     background-image: linear-gradient(to right, #4b6cb7 40%, #182848);
+
+}
+
+
+img {
+     width: 100%;
+     display: block;
+     height: auto;
+     object-fit: cover;
+}

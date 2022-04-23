@@ -1,0 +1,236 @@
+@use '../component/responsive'as r;
+
+/*各セクションのボタン*/
+/*recruitボタン*/
+
+.section-btn {
+     text-align: left;
+
+     a {
+
+          display: inline-block;
+          color: #fff;
+          background-color: #4b6cb7;
+          padding: 1.5rem 3.5rem;
+          box-shadow: 0px 2px 4px 0 rgba(24, 40, 72, 0.46);
+
+          &:hover {
+               opacity: .8;
+               transition: all .6s;
+
+               span {
+                    &::after {
+                         transition: all .6s;
+                         right: -1rem;
+                    }
+               }
+          }
+
+
+
+          span {
+               font-size: 1rem;
+               position: relative;
+               padding-right: 2rem;
+
+               &::after {
+                    display: inline-block;
+                    position: absolute;
+                    top: 35%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    content: url('img/arrow.svg');
+               }
+          }
+     }
+}
+
+/*recruit*/
+.recruit {
+     &__btn-link {
+          width: 16.5rem;
+          font-size: 1rem;
+          color: #fff;
+          position: absolute;
+          top: 13rem;
+          right: -0.5rem;
+          background-color: #182848;
+          padding: 1.25rem 1rem;
+          display: block;
+          opacity: 0.64;
+
+          &:hover {
+               opacity: 1;
+               transition: all .6s;
+
+
+               &::after {
+                    transition: all .6s;
+                    right: 0.45rem;
+               }
+
+          }
+
+
+          &::after {
+               display: inline-block;
+               position: absolute;
+               top: 45%;
+               right: 1rem;
+               transform: translateY(-50%);
+               content: url('img/arrow.svg');
+
+          }
+     }
+
+     .recruit-btn {
+          text-align: center;
+          margin-top: 2.5rem;
+
+     }
+
+}
+
+
+
+/*レスポンシブ*/
+@include r.pc {
+
+     .section-btn {
+          a {
+               &:hover {
+                    opacity: 1;
+                    transition: none;
+
+                    span {
+                         &::after {
+                              transition: none;
+                              right: -0.625rem;
+                         }
+                    }
+               }
+
+
+
+               padding: 2.34375vw 5.46875vw;
+
+               span {
+                    font-size: 1.5625vw;
+                    padding-right: 3.125vw;
+
+                    &::after {
+                         right: -0.625rem;
+                    }
+               }
+          }
+     }
+
+     .recruit {
+          &__btn-link {
+               width: 25.78125vw;
+               top: 20.3125vw;
+               right: -0.78125vw;
+               padding: 1.95312vw 1.5625vw;
+
+
+
+
+               &::after {
+                    right: 1.5625vw;
+               }
+          }
+
+          .recruit-btn {
+               margin-top: 3.90625vw;
+
+          }
+
+     }
+
+}
+
+@include r.tab {
+     .section-btn {
+          a {
+               span {
+                    font-size: 2.08333vw;
+
+               }
+          }
+     }
+
+     .recruit {
+          &__btn-link {
+               width: 16.5rem;
+               top: 36.3125vw;
+               left: 1.3125rem;
+               padding: 0;
+               background-color: transparent;
+               opacity: 1;
+
+               &:hover {
+                    transition: none;
+
+
+                    &::after {
+                         transition: none;
+                         right: 8.75rem;
+                    }
+
+               }
+
+               &::after {
+                    top: 25%;
+                    right: 8.75rem;
+               }
+          }
+
+     }
+
+
+}
+
+
+@include r.sp {
+
+     .section-btn {
+
+          a {
+               span {
+                    font-size: 0.875rem;
+               }
+          }
+     }
+
+
+     .recruit {
+          &__btn-link {
+               font-size: 1rem;
+               top: 45.46vw;
+               left: 1.3125rem;
+
+               &:hover {
+                    &::after {
+                         right: 9rem;
+                    }
+               }
+
+
+               &::after {
+                    right: 9rem;
+               }
+          }
+
+          .recruit-btn {
+               margin-top: 2.5rem;
+
+               a {
+                    // padding: 4.10628vw 12.56038vw 3.38164vw;
+                    padding: 1.0625rem 3.25rem 0.875rem;
+               }
+          }
+
+     }
+
+
+}

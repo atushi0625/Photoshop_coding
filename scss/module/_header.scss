@@ -1,0 +1,229 @@
+@use '../component/responsive'as r;
+
+
+.header {
+     padding: 1.5625rem 2.4375rem;
+     z-index: 100;
+
+     &__container {
+          width: 100%;
+          display: flex;
+     }
+
+     &__logo {
+          width: 9rem;
+     }
+
+     &__logo-drawer {
+          display: none;
+     }
+
+     &__menu-lists {
+          display: flex;
+          align-items: center;
+          margin-left: 1.875rem;
+     }
+
+     &__menu-list {
+          margin-right: 2.375rem;
+          position: relative;
+          color: #fff;
+          text-align: center;
+          transition: opacity 0.4s;
+
+          &:hover {
+               opacity: 0.8;
+
+          }
+
+
+
+          &::before {
+               width: 1.4375rem;
+               height: 1.625rem;
+               top: 1px;
+               right: -2rem;
+               position: absolute;
+               vertical-align: middle;
+               display: inline-block;
+               content: url('img/Line 9.svg');
+
+
+          }
+
+
+          &:last-child {
+               margin-right: 0;
+
+               &::before {
+                    content: none;
+               }
+          }
+
+
+
+          a {
+               font-size: 1rem;
+
+               span {
+                    margin-top: 0.3125rem;
+                    display: block;
+                    font-size: 0.625rem;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 400;
+
+
+               }
+
+          }
+
+
+
+     }
+
+
+
+
+     /*ハンバーガーアイコンがクリックされたらメニュー表示*/
+     .header__menu.open {
+          visibility: visible;
+          opacity: 1;
+
+     }
+
+     a.black-color {
+          color: #191919;
+     }
+
+     .header__menu-list.line::before {
+          content: url('img/Line 2.svg');
+
+     }
+
+
+
+}
+
+.header__menu-list a.link-current {
+     color: #fff;
+
+     &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #191919;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+     }
+}
+
+
+
+.header.is-animation {
+     position: fixed;
+     width: 100%;
+     top: 0;
+     left: 0;
+     background-color: #fff;
+
+}
+
+
+/* ヘッダーレスポンシブ*/
+@include r.pc {
+     .header {
+          padding: 2.4414vw 3.80859vw;
+
+          &__menu-list {
+               a {
+                    font-size: 1.5625vw;
+               }
+          }
+
+          &__logo {
+               width: 14.0625vw;
+          }
+
+     }
+}
+
+@include r.tab {
+     .header {
+          padding: 1rem;
+
+          &__container {
+               justify-content: space-between;
+               align-items: center;
+          }
+
+          &__logo {
+               width: 7.5rem;
+               height: 1.625rem;
+
+          }
+
+          &__logo-drawer {
+               position: fixed;
+               top: 0;
+               left: 0;
+               margin: 1rem 0 0 1rem;
+               width: 7.5rem;
+               height: 1.625rem;
+               display: block;
+          }
+
+          &__menu {
+               opacity: 0;
+               visibility: hidden;
+               position: fixed;
+               z-index: 90;
+               top: 0;
+               left: 0;
+               overflow: hidden;
+               overflow-y: auto;
+               background-color: #4b6cd7;
+               width: 100vw;
+               height: 100vh;
+               transition: opacity .4s ease; //この設定でブレイクポイント時、一瞬の色映りが消える
+          }
+
+          &__menu-lists {
+               margin-top: 5rem;
+               margin-left: 0;
+               flex-direction: column;
+          }
+
+          &__menu-list {
+               margin-right: 0;
+               margin-top: 2.5rem;
+
+
+               &::before {
+                    display: none;
+
+               }
+
+               &:first-child {
+                    color: #191919;
+                    margin-top: 0;
+
+               }
+
+
+               a {
+                    font-size: 1.25rem;
+
+
+                    span {
+                         margin-top: 0.4375rem;
+                         font-size: 0.875rem;
+                    }
+               }
+
+          }
+
+     }
+
+}

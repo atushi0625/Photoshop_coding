@@ -1,0 +1,148 @@
+@use '../component/responsive'as r;
+
+
+.contact {
+     overflow: hidden;
+     background-image: url('img/bckground-image-contact.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center center;
+     width: 100vw;
+     padding: 5rem 0;
+
+     &__inner {
+          max-width: 720px;
+          width: 100%;
+          margin: 0 auto;
+     }
+
+     &__text {
+          font-size: 1rem;
+          margin-top: 2.5625rem;
+          line-height: 2;
+          color: #fff;
+          text-align: center;
+     }
+
+     &__hed-container {
+          display: flex;
+          align-items: baseline;
+          justify-content: center;
+     }
+
+     &__hed {
+          font-size: 3rem;
+          font-weight: bold;
+          font-family: 'Lato', sans-serif;
+          color: #fff;
+
+     }
+
+     &__sub-hed {
+          display: inline-block;
+          font-size: 1.5rem;
+          font-weight: 500;
+          line-height: 1;
+          color: #fff;
+
+          &::before {
+               margin-left: 8px;
+               margin-right: 7px;
+               content: url('img/Line 9.svg');
+          }
+     }
+
+}
+
+@include r.pc {
+     .contact {
+          &__text {
+               margin-top: 4.0039vw;
+               font-size: 1.5625vw;
+          }
+
+
+          &__hed {
+               font-size: 4.6875vw;
+
+          }
+
+          &__sub-hed {
+               font-size: 2.34375vw;
+
+               &::before {
+                    margin-left: 0.78125vw;
+                    margin-right: 0.68359vw;
+               }
+          }
+
+     }
+}
+
+@include r.tab {
+     .contact {
+
+          &__inner {
+               width: 80%;
+          }
+
+          &__hed {
+               font-size: 6.25vw;
+
+          }
+
+          &__sub-hed {
+               font-size: 3.125vw;
+
+               &::before {
+                    content: url('img/Line 9-sp.svg');
+               }
+
+          }
+
+          &__text {
+               font-size: 2.08333vw;
+
+               br {
+                    display: none;
+               }
+          }
+     }
+}
+
+@include r.sp {
+     .contact {
+          padding: 6rem 1.25rem;
+
+          &__inner {
+               width: 100%;
+          }
+
+
+          &__hed-container {
+               justify-content: flex-start;
+          }
+
+
+          &__hed {
+               font-size: 2rem;
+          }
+
+          &__sub-hed {
+               font-size: 1.25rem;
+
+               &::before {
+                    content: url('img/Line 9-sp.svg');
+               }
+
+          }
+
+          &__text {
+               font-size: 0.875rem;
+               margin-top: 2rem;
+               text-align: justify;
+
+          }
+
+     }
+}

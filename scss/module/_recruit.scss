@@ -1,0 +1,130 @@
+@use '../component/responsive'as r;
+
+
+.recruit {
+     margin-top: 160px;
+     background-color: #f0f0f0;
+     padding: 5rem 0;
+
+     &__inner {
+          max-width: 1008px;
+          width: 100%;
+          margin: 0 auto;
+     }
+
+     &__items {
+          margin-top: 3.625rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 36px;
+     }
+
+     &__item {
+          position: relative;
+
+
+          &:nth-of-type(1) {
+               margin-top: 5rem;
+
+          }
+
+          &:nth-of-type(2) {
+               margin-top: 2.5rem;
+
+          }
+     }
+}
+
+@include r.pc {
+     .recruit {
+          padding: 7.8125vw 0;
+
+
+          &__items {
+               margin-top: 5.66406vw;
+               gap: 3.51562vw;
+          }
+
+          &__item {
+               &:nth-of-type(1) {
+                    margin-top: 7.8125vw;
+
+               }
+
+               &:nth-of-type(2) {
+                    margin-top: 3.90625vw;
+
+               }
+          }
+
+
+     }
+
+}
+
+@include r.tab {
+     .recruit {
+
+          &__inner {
+               width: 80%;
+          }
+
+          &__items {
+               grid-template-columns: 1fr;
+               gap: 0;
+          }
+
+          &__item {
+
+               &:nth-of-type(1) {
+                    margin-top: 0rem;
+
+               }
+
+               &:nth-of-type(2) {
+                    margin-top: 0rem;
+
+               }
+          }
+
+     }
+}
+
+@include r.sp {
+
+     .recruit {
+          margin-top: 120px;
+          padding: 0 0 8.5rem;
+          background-color: #fff;
+          position: relative;
+
+          &::before {
+               position: absolute;
+               bottom: 0;
+               left: 0;
+               content: "";
+               width: 100%;
+               background-color: #f0f0f0;
+               height: 13.75rem;
+               z-index: -1;
+          }
+
+          &__inner {
+               width: 100%;
+               padding: 0 1.25rem;
+          }
+
+          &__items {
+               margin-top: 2.1875rem;
+          }
+
+          &__item {
+               position: relative;
+               margin: 0 calc(50% - 50vw);
+
+
+          }
+
+
+     }
+}

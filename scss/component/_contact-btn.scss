@@ -1,0 +1,383 @@
+@use '../component/responsive'as r;
+/*contactボタン*/
+
+
+/*contact*/
+.contact {
+     &__btn-container {
+          margin-top: 3.4375rem;
+          display: flex;
+     }
+
+     &__btn {
+          cursor: pointer;
+          text-align: center;
+          width: 20rem;
+          display: inline-block;
+          padding: 1.75rem 0;
+
+          &:hover {
+               span {
+                    transition: all 0.6s;
+                    opacity: 0.8;
+               }
+
+               &:nth-child(1) {
+                    &::before {
+                         transition: all 0.6s;
+                         left: 4.5rem;
+                    }
+
+                    &::after {
+                         transition: all 0.6s;
+                         right: 4.5rem;
+                    }
+
+               }
+
+               &:nth-child(2) {
+                    &::before {
+                         transition: all 0.6s;
+                         left: 3.5rem;
+                    }
+
+                    &::after {
+                         transition: all 0.6s;
+                         right: 3.5rem;
+                    }
+
+               }
+          }
+
+
+          &:nth-child(1) {
+               position: relative;
+               display: block;
+               background-color: #b8614b;
+               margin-right: 2.5rem;
+
+          }
+
+          &:nth-child(2) {
+               position: relative;
+               display: block;
+               background-color: #191919;
+               margin-left: 2.5rem;
+
+          }
+
+          &:nth-child(1) {
+
+               &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 5rem;
+                    transform: translateY(-50%);
+                    content: url('img/Backhoe.svg');
+
+               }
+
+               &::after {
+                    position: absolute;
+                    top: 45%;
+                    right: 5rem;
+                    transform: translateY(-50%);
+                    content: url('img/arrow.svg');
+               }
+
+
+          }
+
+          &:nth-child(2) {
+               &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 4rem;
+                    transform: translateY(-50%);
+                    content: url('img/Factory.svg');
+
+               }
+
+               &::after {
+                    position: absolute;
+                    top: 45%;
+                    right: 4rem;
+                    transform: translateY(-50%);
+                    content: url('img/arrow.svg');
+               }
+
+          }
+     }
+
+     &__btn-link {
+
+          span {
+               font-size: 1rem;
+               color: #fff;
+          }
+     }
+
+}
+
+
+/*レスポンシブ*/
+@include r.pc {
+
+     .contact {
+          &__btn-container {
+               margin-top: 5.37109vw;
+          }
+
+          &__btn {
+               width: 20rem;
+               padding: 2.73437vw 0;
+
+               &:hover {
+                    &:nth-child(1) {
+                         &::before {
+                              left: 7.03125vw;
+
+                         }
+
+                         &::after {
+                              right: 7.03125vw;
+                         }
+
+                    }
+
+                    &:nth-child(2) {
+                         &::before {
+                              left: 5.46875vw;
+                         }
+
+                         &::after {
+                              right: 5.46875vw;
+                         }
+
+                    }
+
+               }
+
+               &:nth-child(1) {
+                    margin-right: 3.90625vw;
+
+               }
+
+               &:nth-child(2) {
+                    margin-left: 3.90625vw;
+
+               }
+
+               &:nth-child(1) {
+
+                    &::before {
+                         left: 7.8125vw;
+                    }
+
+                    &::after {
+                         right: 7.8125vw;
+                    }
+
+
+               }
+
+               &:nth-child(2) {
+                    &::before {
+                         left: 6.25vw;
+
+                    }
+
+                    &::after {
+                         right: 6.25vw;
+                    }
+
+               }
+          }
+
+          &__btn-link {
+               span {
+                    font-size: 1.5625vw;
+
+               }
+          }
+     }
+}
+
+@include r.tab {
+
+     .contact {
+          &__btn-container {
+               flex-direction: column;
+               align-items: center;
+          }
+
+          &__btn {
+               width: 20rem;
+               padding: 2.73437vw 0;
+
+               &:hover {
+                    span {
+                         transition: none;
+                         opacity: 1;
+                    }
+
+                    &:nth-child(1) {
+                         &::before {
+                              left: 6.25vw;
+                         }
+
+                         &::after {
+                              right: 6.25vw;
+                         }
+
+                    }
+
+                    &:nth-child(2) {
+                         &::before {
+                              left: 6.25vw;
+                         }
+
+                         &::after {
+                              right: 6.25vw;
+                         }
+
+                    }
+
+               }
+
+               &:nth-child(1) {
+                    margin-right: 0;
+
+               }
+
+               &:nth-child(2) {
+                    margin-top: 3.125vw;
+                    margin-left: 0;
+
+               }
+
+               &:nth-child(1) {
+
+                    &::before {
+                         left: 6.25vw;
+                    }
+
+                    &::after {
+                         right: 6.25vw;
+                    }
+
+
+               }
+
+               &:nth-child(2) {
+                    &::before {
+                         left: 6.25vw;
+
+                    }
+
+                    &::after {
+                         right: 6.25vw;
+                    }
+
+               }
+          }
+
+          &__btn-link {
+               span {
+                    font-size: 2.08333vw;
+               }
+          }
+
+     }
+
+}
+
+
+@include r.sp {
+
+     .contact {
+
+          &__btn-container {
+               margin-top: 2rem;
+          }
+
+          &__btn {
+               width: 100%;
+               padding: 1.1875rem 0 0.9375rem;
+
+               &:hover {
+                    &:nth-child(1) {
+                         &::before {
+                              left: 1.5rem;
+                         }
+
+                         &::after {
+                              right: 1.5rem;
+                         }
+
+                    }
+
+                    &:nth-child(2) {
+                         &::before {
+                              left: 1.5rem;
+                         }
+
+                         &::after {
+                              right: 1.5rem;
+                         }
+
+                    }
+               }
+
+               &:nth-child(1) {
+                    margin-right: 0;
+
+               }
+
+               &:nth-child(2) {
+                    margin-top: 1.5rem;
+                    margin-left: 0;
+
+               }
+
+               &:nth-child(1) {
+
+                    &::before {
+                         position: absolute;
+                         top: 50%;
+                         left: 1.5rem;
+                         transform: translateY(-50%);
+                         content: url('img/Backhoe-sp.svg');
+                    }
+
+                    &::after {
+                         right: 1.5rem;
+                    }
+
+
+               }
+
+               &:nth-child(2) {
+                    &::before {
+                         position: absolute;
+                         top: 50%;
+                         left: 1.5rem;
+                         transform: translateY(-50%);
+                         content: url('img/Factory-sp.svg');
+
+                    }
+
+                    &::after {
+                         right: 1.5rem;
+                    }
+
+               }
+          }
+
+          &__btn-link {
+               span {
+                    font-size: 0.875rem;
+               }
+          }
+     }
+}

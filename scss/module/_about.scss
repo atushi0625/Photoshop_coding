@@ -1,0 +1,188 @@
+@use '../component/responsive'as r;
+
+
+.about {
+     margin-top: 160px;
+
+
+     &__container {
+          position: relative;
+          background-image: url('img/background-image-about.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          width: 100vw;
+          height: 41rem;
+
+     }
+
+     &__img-sp {
+          display: none;
+
+     }
+
+
+
+     &__content {
+          width: 100%;
+          margin-top: 2.5rem;
+          position: absolute;
+          top: 0;
+          left: 10.9375rem;
+          padding: 2.5rem 3rem 2.5rem 3rem;
+          max-width: 31.5rem;
+          background-color: #fff;
+     }
+
+     &__text {
+          font-size: 1rem;
+          margin-top: 1.75rem;
+          line-height: 2;
+          letter-spacing: 0.02rem;
+     }
+
+     &__img {
+          margin-top: 2rem;
+     }
+
+     .about-btn {
+          margin-top: 2.75rem;
+
+          a {
+               padding: 1.5rem 4.5rem;
+          }
+     }
+
+
+}
+
+@include r.pc {
+     .about {
+          &__content {
+               margin-top: 3.90625vw;
+               left: 17.08984vw;
+               padding: 3.90625vw 4.6875vw 3.90625vw 3.90625vw;
+               max-width: 49.21875vw;
+          }
+
+          &__text {
+               font-size: 1.5625vw;
+               margin-top: 2.73437vw;
+          }
+
+          &__img {
+               margin-top: 3.125vw;
+          }
+
+          .about-btn {
+               margin-top: 4.29687vw;
+
+               a {
+                    padding: 2.34375vw 7.03125vw;
+               }
+          }
+     }
+}
+
+@include r.tab {
+     .about {
+          &__container {
+               width: 100%;
+               background-image: none;
+               height: auto;
+               position: static;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               flex-direction: column;
+               padding: 0 8.33333vw;
+          }
+
+          &__img-sp {
+               width: 100%;
+               display: block;
+          }
+
+          &__content {
+               position: static;
+          }
+
+          &__text {
+               font-size: 2.08333vw;
+
+               br {
+                    &:nth-of-type(1) {
+                         display: none;
+                    }
+
+                    &:nth-of-type(3) {
+                         display: none;
+                    }
+
+                    &:nth-of-type(4) {
+                         display: none;
+                    }
+               }
+          }
+
+
+          .about-hed {
+               margin-top: 0;
+          }
+
+          &__content {
+               max-width: 100%;
+               padding: 0;
+               left: 0;
+          }
+     }
+}
+
+@include r.sp {
+     .about {
+          margin-top: 120px;
+
+          &__container {
+               padding: 0 1.25rem;
+
+          }
+
+          &__img-sp {
+               height: 15.5rem;
+               display: block;
+
+          }
+
+
+          .about-hed {
+               margin-top: 2.5rem;
+          }
+
+
+          &__content {
+               margin-top: 0;
+          }
+
+          &__text {
+               font-size: 0.875rem;
+               letter-spacing: 0.0175rem;
+
+          }
+
+          &__img {
+               display: none;
+          }
+
+
+          .about-btn {
+               margin-top: 2.125rem;
+               text-align: center;
+
+               a {
+                    padding: 0.9375rem 4.8125rem;
+               }
+          }
+
+     }
+
+}

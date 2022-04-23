@@ -1,0 +1,199 @@
+@use '../component/responsive'as r;
+
+
+.services {
+     background-color: #f0f0f0;
+     margin-top: 160px;
+
+     &__container {
+          position: relative;
+          z-index: 1;
+
+          &::before {
+               z-index: -1;
+               position: absolute;
+               top: 0;
+               right: -1rem;
+               width: 27.625vw;
+               height: 100%;
+               content: "";
+               background-color: #fff;
+               transform: skew(-40deg);
+          }
+     }
+
+     &__inner {
+          width: 100%;
+          max-width: 1190px;
+          display: flex;
+          position: relative;
+          top: 2.0625rem;
+
+     }
+
+     &__img {
+          max-width: 38.75rem;
+          width: 100%;
+          height: 27.5rem;
+
+          img {
+               height: 100%;
+          }
+     }
+
+     &__content {
+          margin-top: -0.4375rem;
+          width: 100%;
+          max-width: 32rem;
+          margin-left: 3rem;
+     }
+
+     &__sub-title {
+          font-size: 2rem;
+          font-weight: 500;
+          line-height: 1.3;
+          margin-top: 1.5rem;
+     }
+
+     &__text {
+          font-size: 1rem;
+          margin-top: 1.5rem;
+          line-height: 2;
+     }
+
+     .services-btn {
+          margin-top: 3.1875rem;
+
+          a {
+               padding: 1.5rem 2.5rem;
+          }
+     }
+}
+
+@include r.pc {
+     .services {
+
+          &__container {
+
+               &::before {
+                    right: -1.5625vw;
+               }
+          }
+
+          &__content {
+               max-width: 50vw;
+               margin-top: -0.68359vw;
+               margin-left: 4.6875vw;
+          }
+
+          &__sub-title {
+               font-size: 3.125vw;
+               margin-top: 2.34375vw;
+          }
+
+          &__text {
+               font-size: 1.5625vw;
+          }
+
+          .services-btn {
+               margin-top: 4.98046vw;
+
+               a {
+                    padding: 2.34375vw 3.90625vw;
+               }
+          }
+     }
+}
+
+@include r.tab {
+     .services {
+
+          &__img {
+               max-width: 100%;
+               height: 66.13333333vw;
+          }
+
+          &__inner {
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+          }
+
+          &__content {
+               margin-left: 0;
+               max-width: 81.5vw;
+
+          }
+
+          &__sub-title {
+               font-size: 4.16666vw;
+          }
+
+          &__text {
+               font-size: 2.08333vw;
+          }
+     }
+}
+
+
+
+@include r.sp {
+     .services {
+          margin-top: 120px;
+
+          &__container {
+
+               &::before {
+                    top: 0;
+                    right: -7rem;
+                    width: 61vw;
+                    transform: skew(-25deg);
+               }
+          }
+
+
+          &__inner {
+               top: 0rem;
+          }
+
+          &__img {
+               width: 100%;
+               height: 100%;
+
+               img {
+                    height: 248px;
+               }
+          }
+
+          &__content {
+               margin-top: 0;
+               padding: 0 1.4375rem 3rem;
+               margin-left: 0;
+               max-width: 100%;
+          }
+
+
+          &__sub-title {
+               font-size: 1.3rem;
+          }
+
+          &__text {
+               font-size: 0.875rem;
+               letter-spacing: 0.0175rem;
+
+               br {
+                    display: none;
+               }
+          }
+
+          .services-btn {
+               margin-top: 2.25rem;
+               text-align: center;
+
+               a {
+                    padding: 0.9375rem 3rem;
+
+               }
+          }
+     }
+}
